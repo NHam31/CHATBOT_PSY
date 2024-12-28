@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+
+# Environnements virtuels
+env/
+venv/
+*.env
+
+# Dossier de configuration spécifique à Streamlit
+.streamlit/
+
+# Fichiers de log
+*.log
+
+# Cache
+.cache/
+
+# Fichiers sensibles (ajoutez les fichiers sensibles si nécessaire)
+*.key
