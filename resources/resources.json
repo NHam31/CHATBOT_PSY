@@ -1,0 +1,112 @@
+{
+  "stress": {
+        "videos": {
+            "respiration": [
+                "https://youtu.be/7jKUxl_2Lfs?si=V7FejJbSMPvwsGNL",
+                "https://youtu.be/DfJtdQ4FCaw?si=zv4fVSdFTawvEQ4g",
+                "https://youtu.be/5tBtaK4fAdA?si=GDzZyYAVqjq0qm5r",
+                "https://youtu.be/CK6OMG_5LMQ?si=63K7w5hi17KXCLBe",
+                "https://youtu.be/nAzPZG6h_S8?si=GiNPFp39xyZLzyHS"
+            ],
+            "meditation": [
+                "https://youtu.be/bQoOev5GNYM?si=gpd9Qiw26BGdYuXv",
+                "https://youtu.be/EL6gQWo_aSM?si=m1zrqT3jbTwD2MYE",
+                "https://youtu.be/5bxBcbkSrtY?si=wL4UfW0oTQq3PmEt",
+                "https://youtu.be/sbivsrlopOw?si=JVS_5_cJezRSdMb_",
+                "https://youtu.be/Zz1MH0nfS1U?si=NDAERbcJxybCSZ-j"
+            ],
+            "yoga": [
+                "https://youtu.be/ra1buV7Wi5M?si=oWe4w7wMA_IWo4Ub",
+                "https://youtu.be/kyyVPp3iNEs?si=bfxULbgo-_RjckF5",
+                "https://youtu.be/8z_40RD1pQU?si=i6T8xqtmzm79puXc",
+                "https://youtu.be/Ecq4xvL1c5c?si=rYzEAVyH1dLL6MG7",
+                "https://youtu.be/sd49ER2kF2M?si=cfeDn7i7BWcgJZfY",
+                "https://youtu.be/yNdKHEHRGpg?si=nbZFG_mrIYnhV_su",
+                "https://youtu.be/XwCGrtfh7J0?si=GVSCb3lIoH_e4yWq"
+            ]
+        },
+        "exercise": [
+            "Respiration 4-7-8 : Inspirez 4 secondes, retenez votre souffle 7 secondes, expirez lentement pendant 8 secondes.",
+            "Étirement corporel : Faites des étirements doux pour relâcher les tensions musculaires.",
+            "Relaxation progressive : Contractez et relâchez chaque groupe musculaire, en partant des orteils jusqu'à la tête.",
+            "Visualisation positive : Imaginez un endroit calme et relaxant, comme une plage ou une montagne.",
+            "Exercice d'ancrage : Concentrez-vous sur vos cinq sens pour revenir au moment présent.",
+            "Écoute de sons apaisants : Écoutez des bruits de la nature, comme le son de la pluie ou des vagues.",
+            "Jardinage ou soin des plantes : Prenez soin de plantes ou de fleurs pour apaiser votre esprit.",
+            "Journal de stress : Écrivez ce qui vous stresse et proposez-vous des solutions réalistes.",
+            "Pause numérique : Éloignez-vous des écrans pendant 30 minutes.",
+            "Boisson relaxante : Préparez une infusion de camomille ou une tisane apaisante."
+        ]
+    },
+    "depression": {
+        "videos": {
+            "motivation": {
+                "en francais": [
+                    "https://youtu.be/IpubFyxxz04?si=Fbz2HmyDtXqh9JiW",
+                    "https://youtu.be/lcylR1ki2RA?si=c1RfaciEdFjntZ9j",
+                    "https://youtu.be/oiIqZS85xho?si=5QNAIhPkuqWXAV8Q",
+                    "https://youtu.be/NIi9zddDov4?si=OquhbWJRJxps5PCl",
+                    "https://youtu.be/_g-cXUbEduM?si=YVtGfZDvFG5UiJ6g"
+                ],
+                "en arabe": [
+                    "https://youtu.be/9oPW3ydDIE4?si=WWkrZeiXbgRK_bFv",
+                    "https://youtu.be/uWdn0cL4HHQ?si=vC4_HnyFXeYUXvyv",
+                    "https://youtu.be/igIdKdjU5WE?si=dfpgN5uC0Skrymkc"
+                ]
+            }
+        },
+        "exercise": [
+            "Prenez une promenade de 10 minutes à l'extérieur pour vous connecter avec la nature.",
+            "Écriture positive : Notez trois choses positives qui se sont passées dans la journée.",
+            "Respiration diaphragmatique : Inspirez profondément en gonflant votre ventre, puis expirez lentement.",
+            "Exercice de gratitude : Écrivez une lettre ou un message à quelqu'un pour exprimer votre gratitude.",
+            "Méditation guidée : Suivez une vidéo de méditation pour la relaxation.",
+            "Contact social : Appelez ou envoyez un message à un ami ou un proche.",
+            "Routine matinale : Réveillez-vous à une heure fixe et commencez votre journée avec un rituel positif.",
+            "Exposition au soleil : Passez 10 à 15 minutes dehors pour stimuler votre production de vitamine D."
+        ]
+    },
+    "anxiety": {
+        "videos": {
+            "relaxation": [
+                "https://youtu.be/l4fQ0GA1oOI?si=owBoZgsVwqMhUjCG",
+                "https://youtu.be/Ufohfe3PeRM?si=pJCT2WRk4h6SnF2e",
+                "https://youtu.be/E2_VV0dwqDU?si=-6j3upbD6X1Xx2jF",
+                "https://youtu.be/nVqQO93RQxY?si=4eVKSon867lwteU1",
+                "https://youtu.be/3nyQpBu2BSc?si=JJb3Po2oAiHnBOZZ",
+                "https://youtu.be/Zz1MH0nfS1U?si=NDAERbcJxybCSZ-j",
+                "https://youtu.be/nAzPZG6h_S8?si=GiNPFp39xyZLzyHS"
+            ],
+            "yoga": [
+                "https://youtu.be/ra1buV7Wi5M?si=oWe4w7wMA_IWo4Ub",
+                "https://youtu.be/kyyVPp3iNEs?si=bfxULbgo-_RjckF5",
+                "https://youtu.be/8z_40RD1pQU?si=i6T8xqtmzm79puXc",
+                "https://youtu.be/Ecq4xvL1c5c?si=rYzEAVyH1dLL6MG7",
+                "https://youtu.be/sd49ER2kF2M?si=cfeDn7i7BWcgJZfY",
+                "https://youtu.be/yNdKHEHRGpg?si=nbZFG_mrIYnhV_su",
+                "https://youtu.be/XwCGrtfh7J0?si=GVSCb3lIoH_e4yWq"
+            ]
+        },
+        "exercise": [
+            "Respiration en carré : Inspirez 4 secondes, retenez votre souffle 4 secondes, expirez 4 secondes, puis restez en pause 4 secondes.",
+            "Observation des pensées : Notez vos pensées anxieuses et remplacez-les par des affirmations positives.",
+            "Défi cognitif : Posez-vous des questions sur la probabilité que vos peurs se réalisent vraiment.",
+            "Écriture des peurs : Écrivez vos craintes sur une feuille, puis déchirez-la symboliquement.",
+            "Marche lente : Marchez lentement en étant attentif à vos pas et à votre respiration.",
+            "Yoga pour débutants : Faites une courte séance de yoga pour calmer l’esprit et détendre le corps.",
+            "Objets réconfortants : Tenez un objet doux ou réconfortant, comme une couverture ou un oreiller.",
+            "Planification : Faites une liste de tâches pour organiser votre journée et réduire l'incertitude.",
+            "Pause sensuelle : Sentez un parfum agréable ou écoutez une musique relaxante pour calmer votre esprit.",
+            "Affirmations positives : Répétez des phrases comme : 'Je peux gérer cela', 'Je suis en sécurité'."
+        ]
+    },
+    "adaptability": {
+        "categories": {
+            "soft skills": [
+                "https://youtu.be/xJM_CQN8-ns?si=xxfPJeNiF1Iq18Lw",
+                "https://youtu.be/eSX-Kuo4ulw?si=wlDe54qMNsNBlZTy",
+                "https://youtu.be/0g3IotDlSSY?si=IVNQW3dcDqFGz3nT"
+            ]
+        }
+    }
+}
