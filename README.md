@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 
 # Chatbot PSY 🌼
 
@@ -126,6 +126,4 @@ Le projet est structuré de manière à faciliter la navigation et la compréhen
 ## Exécuter l'application Streamlit
 streamlit run src/chatbot_psy.py
 
-=======
-# CHATBOT_PSY
->>>>>>> b4e54d3 (Initial commit)
+
