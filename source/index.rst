@@ -1,236 +1,80 @@
-.. CHATBOT_PSY documentation master file, created by
-   sphinx-quickstart on Sun Dec 29 17:18:55 2024.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+.. PsyBot Documentation master file, created by
+   sphinx-quickstart on Sat Dec 29 2024.
+   You can adapt this file completely to your liking, but it should at least contain
+   the root `toctree` directive.
 
-Welcome to CHATBOT_PSY documentation
-======================================
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
 
-Bienvenue dans la documentation officielle du projet Chatbot PSY. Cette application Streamlit interactive est conçue pour aider les utilisateurs 
-à mieux comprendre leurs émotions et à améliorer leur bien-être mental.
+   introduction
+   fonctionnalites
+   prerequis
+   installation
+   collecte_de_donnees
+   detection_emotions
+   generation_recommandations
+   modele_de_langage
+   reponse_chatbot
+   historique_chatbot
+   affichage
+   interface_streamlit
+   conclusion
 
-* Table des matières *
-  - introduction
-  - Fonctionnalités
-  - Prérequis
-  - installation
-  - Collecte de donnees
-  - Detection des émotions
-  - Generation des recommandations aléatoires
-  - Modèle de langage
-  - Reponse Chatbot
-  - Historique Chatbot
-  - Affichage
-  - Interface STREAMLIT 
-  - Conclusion
 
 Introduction
-==================
-Le Chatbot PSY est capable de détecter des émotions comme le stress, la dépression, l'anxiété et les difficultés d'adaptabilité, puis de recommander des ressources adaptées. 
-L’application propose des vidéos, des exercices de relaxation, et d'autres conseils personnalisés pour aider les utilisateurs à gérer leurs émotions.
+============
+
+Ce projet est un chatbot psychologique développé pour aider les utilisateurs à identifier et à gérer leurs émotions, principalement en détectant des troubles comme le stress, l'anxiété, la dépression, et les difficultés d'adaptabilité. Il offre des recommandations personnalisées telles que des vidéos et des exercices de relaxation, ainsi que des conseils pratiques pour améliorer le bien-être mental.
 
 Fonctionnalités
-==================
-
-Détection d'émotions
-=================
-
-Le chatbot analyse les messages de l’utilisateur pour identifier les émotions suivantes :
-
-. Stress
-
-. Dépression
-
-. Anxiété
-
-. Adaptabilité
-
-Recommandations personnalisées
-=================
-
-En fonction des émotions détectées, le chatbot propose :
-
-. Des exercices de respiration et de relaxation.
-
-. Des vidéos de motivation et de méditation.
-
-. Des techniques pour améliorer la gestion du stress et de l’anxiété.
-
-Interface intuitive
-=================
-
-L'application offre une interface simple via Streamlit permettant aux utilisateurs de :
-
-Discuter avec le chatbot.
-=================
-
-Recevoir des recommandations adaptées.
-
-Consulter l’historique de conversation.
-
-Modèle de langage avancé
-=================
-
-Le chatbot intègre le modèle llama3.2 via OllamaLLM pour fournir des réponses précises et pertinentes.
+===============
+Le chatbot offre plusieurs fonctionnalités pour soutenir les utilisateurs dans la gestion de leurs émotions, notamment :
+- Détection des émotions à partir de l'entrée utilisateur.
+- Génération de recommandations de vidéos et exercices basées sur les émotions détectées.
+- Interaction en temps réel avec l'utilisateur via une interface Streamlit.
+- Historique des interactions pour suivre l'évolution du bien-être de l'utilisateur.
 
 Prérequis
-==================
-
-Langages et outils requis :
-==============
-
-Python 3.8+
-
-Streamlit
-
-LangChain
-
-OllamaLLM
-
-Installation des dépendances :
-==============
-Un fichier requirements.txt est fourni pour installer toutes les bibliothèques nécessaires.,
+==========
+Avant de pouvoir exécuter ce projet, assurez-vous que les éléments suivants sont installés :
+- Python 3.8+
+- Streamlit
+- Langchain
+- Ollama (modèle Llama 3.2):
+- Autres bibliothèques nécessaires : `difflib`, `random`, etc.
 
 Installation
-==================
-Les bibliothèques suivantes sont nécessaires pour le projet :
+============
+- Clonez le dépôt du projet :
+  .. code-block:: python
+      git clone https://github.com/votre-utilisateur/chatbot-psy.git
+      cd chatbot-psy
+- Installez les dépendances nécessaires :
+  .. code-block:: python
+   pip install python
+   pip install streamlit
+   pip install OllamaLLM
+   pip install langchain_ollama
+   pip install difflib
    
-  1. streamlit : Développer rapidement des applications web interactives pour partager des modèles et des analyses.
-  2. OllamaLLM :
-  3. langchain_ollama:
-  4. difflib:
-  5. random:
-
-.. code-block:: python
+  .. code-block:: python
    import streamlit as st
    from langchain_ollama import OllamaLLM
    import difflib
    import random
-
-* Collecte de donnees * :
-   ==================
-   Pour la collecte du donnees, on a introduit de differentes videos et exercices adaptees aux differentes troubles.
-   Le fichier 'resources/resources.json' contient des vidéos et des exercices de relaxation et de méditation. 
-   Il est utilisé pour fournir des recommandations personnalisées.
+- Lancez l'application Streamlit :
 .. code-block:: python
-   resources = {
-      "stress": {
-         "videos": {
-               "respiration": [
-                  "https://youtu.be/7jKUxl_2Lfs?si=V7FejJbSMPvwsGNL",
-                  "https://youtu.be/DfJtdQ4FCaw?si=zv4fVSdFTawvEQ4g",
-                  "https://youtu.be/5tBtaK4fAdA?si=GDzZyYAVqjq0qm5r",
-                  "https://youtu.be/CK6OMG_5LMQ?si=63K7w5hi17KXCLBe",
-                  "https://youtu.be/nAzPZG6h_S8?si=GiNPFp39xyZLzyHS"
-               ],
-               "meditation": [
-                  "https://youtu.be/bQoOev5GNYM?si=gpd9Qiw26BGdYuXv",
-                  "https://youtu.be/EL6gQWo_aSM?si=m1zrqT3jbTwD2MYE",
-                  "https://youtu.be/5bxBcbkSrtY?si=wL4UfW0oTQq3PmEt",
-                  "https://youtu.be/sbivsrlopOw?si=JVS_5_cJezRSdMb_",
-                  "https://youtu.be/Zz1MH0nfS1U?si=NDAERbcJxybCSZ-j"
-               ],
-               "yoga": [
-                  "https://youtu.be/ra1buV7Wi5M?si=oWe4w7wMA_IWo4Ub",
-                  "https://youtu.be/kyyVPp3iNEs?si=bfxULbgo-_RjckF5",
-                  "https://youtu.be/8z_40RD1pQU?si=i6T8xqtmzm79puXc",
-                  "https://youtu.be/Ecq4xvL1c5c?si=rYzEAVyH1dLL6MG7",
-                  "https://youtu.be/sd49ER2kF2M?si=cfeDn7i7BWcgJZfY",
-                  "https://youtu.be/yNdKHEHRGpg?si=nbZFG_mrIYnhV_su",
-                  "https://youtu.be/XwCGrtfh7J0?si=GVSCb3lIoH_e4yWq"
-               ]
-         },
-         "exercise": [
-               "Respiration 4-7-8 : Inspirez 4 secondes, retenez votre souffle 7 secondes, expirez lentement pendant 8 secondes.",
-               "Étirement corporel : Faites des étirements doux pour relâcher les tensions musculaires.",
-               "Relaxation progressive : Contractez et relâchez chaque groupe musculaire, en partant des orteils jusqu'à la tête.",
-               "Visualisation positive : Imaginez un endroit calme et relaxant, comme une plage ou une montagne.",
-               "Exercice d'ancrage : Concentrez-vous sur vos cinq sens pour revenir au moment présent.",
-               "Écoute de sons apaisants : Écoutez des bruits de la nature, comme le son de la pluie ou des vagues.",
-               "Jardinage ou soin des plantes : Prenez soin de plantes ou de fleurs pour apaiser votre esprit.",
-               "Journal de stress : Écrivez ce qui vous stresse et proposez-vous des solutions réalistes.",
-               "Pause numérique : Éloignez-vous des écrans pendant 30 minutes.",
-               "Boisson relaxante : Préparez une infusion de camomille ou une tisane apaisante."
-         ]
-      },
-      "depression": {
-         "videos": {
-               "motivation": {
-                  "en francais": [
-                     "https://youtu.be/IpubFyxxz04?si=Fbz2HmyDtXqh9JiW",
-                     "https://youtu.be/lcylR1ki2RA?si=c1RfaciEdFjntZ9j",
-                     "https://youtu.be/oiIqZS85xho?si=5QNAIhPkuqWXAV8Q",
-                     "https://youtu.be/NIi9zddDov4?si=OquhbWJRJxps5PCl",
-                     "https://youtu.be/_g-cXUbEduM?si=YVtGfZDvFG5UiJ6g"
-                  ],
-                  "en arabe": [
-                     "https://youtu.be/9oPW3ydDIE4?si=WWkrZeiXbgRK_bFv",
-                     "https://youtu.be/uWdn0cL4HHQ?si=vC4_HnyFXeYUXvyv",
-                     "https://youtu.be/igIdKdjU5WE?si=dfpgN5uC0Skrymkc"
-                  ]
-               }
-         },
-         "exercise": [
-               "Prenez une promenade de 10 minutes à l'extérieur pour vous connecter avec la nature.",
-               "Écriture positive : Notez trois choses positives qui se sont passées dans la journée.",
-               "Respiration diaphragmatique : Inspirez profondément en gonflant votre ventre, puis expirez lentement.",
-               "Exercice de gratitude : Écrivez une lettre ou un message à quelqu'un pour exprimer votre gratitude.",
-               "Méditation guidée : Suivez une vidéo de méditation pour la relaxation.",
-               "Contact social : Appelez ou envoyez un message à un ami ou un proche.",
-               "Routine matinale : Réveillez-vous à une heure fixe et commencez votre journée avec un rituel positif.",
-               "Exposition au soleil : Passez 10 à 15 minutes dehors pour stimuler votre production de vitamine D."
-         ]
-      },
-      "anxiety": {
-         "videos": {
-               "relaxation": [
-                  "https://youtu.be/l4fQ0GA1oOI?si=owBoZgsVwqMhUjCG",
-                  "https://youtu.be/Ufohfe3PeRM?si=pJCT2WRk4h6SnF2e",
-                  "https://youtu.be/E2_VV0dwqDU?si=-6j3upbD6X1Xx2jF",
-                  "https://youtu.be/nVqQO93RQxY?si=4eVKSon867lwteU1",
-                  "https://youtu.be/3nyQpBu2BSc?si=JJb3Po2oAiHnBOZZ",
-                  "https://youtu.be/Zz1MH0nfS1U?si=NDAERbcJxybCSZ-j",
-                  "https://youtu.be/nAzPZG6h_S8?si=GiNPFp39xyZLzyHS"
-               ],
-               "yoga": [
-                  "https://youtu.be/ra1buV7Wi5M?si=oWe4w7wMA_IWo4Ub",
-                  "https://youtu.be/kyyVPp3iNEs?si=bfxULbgo-_RjckF5",
-                  "https://youtu.be/8z_40RD1pQU?si=i6T8xqtmzm79puXc",
-                  "https://youtu.be/Ecq4xvL1c5c?si=rYzEAVyH1dLL6MG7",
-                  "https://youtu.be/sd49ER2kF2M?si=cfeDn7i7BWcgJZfY",
-                  "https://youtu.be/yNdKHEHRGpg?si=nbZFG_mrIYnhV_su",
-                  "https://youtu.be/XwCGrtfh7J0?si=GVSCb3lIoH_e4yWq"
-               ]
-         },
-         "exercise": [
-               "Respiration en carré : Inspirez 4 secondes, retenez votre souffle 4 secondes, expirez 4 secondes, puis restez en pause 4 secondes.",
-               "Observation des pensées : Notez vos pensées anxieuses et remplacez-les par des affirmations positives.",
-               "Défi cognitif : Posez-vous des questions sur la probabilité que vos peurs se réalisent vraiment.",
-               "Écriture des peurs : Écrivez vos craintes sur une feuille, puis déchirez-la symboliquement.",
-               "Marche lente : Marchez lentement en étant attentif à vos pas et à votre respiration.",
-               "Yoga pour débutants : Faites une courte séance de yoga pour calmer l’esprit et détendre le corps.",
-               "Objets réconfortants : Tenez un objet doux ou réconfortant, comme une couverture ou un oreiller.",
-               "Planification : Faites une liste de tâches pour organiser votre journée et réduire l'incertitude.",
-               "Pause sensuelle : Sentez un parfum agréable ou écoutez une musique relaxante pour calmer votre esprit.",
-               "Affirmations positives : Répétez des phrases comme : 'Je peux gérer cela', 'Je suis en sécurité'."
-         ]
-      },
-      "adaptability": {
-         "categories": {
-               "soft skills": [
-                  "https://youtu.be/xJM_CQN8-ns?si=xxfPJeNiF1Iq18Lw",
-                  "https://youtu.be/eSX-Kuo4ulw?si=wlDe54qMNsNBlZTy",
-                  "https://youtu.be/0g3IotDlSSY?si=IVNQW3dcDqFGz3nT"
-               ]
-         }
-      }
-   }
 
-* Detection des émotions * :
-   ==================
-   Analyse les messages utilisateur pour détecter les émotions associées :
-   .. code-block:: python
-      def detect_and_recommend_emotions(response):
+Collecte de données
+===================
+Les données utilisées dans ce projet comprennent des vidéos, des exercices, et des ressources pour chaque émotion ciblée (stress, anxiété, dépression, etc.). Ces ressources sont soigneusement sélectionnées pour offrir un soutien pertinent aux utilisateurs.
+
+Détection des émotions
+======================
+Le chatbot détecte plusieurs émotions en analysant le texte entré par l'utilisateur. À l'aide de mots-clés spécifiques pour chaque émotion (stress, dépression, anxiété, et adaptabilité), le système utilise la fonction `detect_and_recommend_emotions` pour identifier les émotions présentes dans le message de l'utilisateur.
+.. code-block:: python
+   def detect_and_recommend_emotions(response):
       keywords = {
          "stress": ["stressé", "stress"],
          "depression": ["déprimé", "triste", "sans espoir"],
@@ -244,9 +88,9 @@ Les bibliothèques suivantes sont nécessaires pour le projet :
                 detected_emotions.append(category)
     return detected_emotions
 
-* Generation des recommandations aléatoires * :
-==================  
-Sélectionne des ressources adaptées aux émotions détectées :
+Génération des recommandations aléatoires
+===========================================
+Une fois les émotions détectées, le système génère des recommandations personnalisées. Cela inclut des vidéos et des exercices tirés d'une base de données préétablie. Les vidéos et exercices sont choisis de manière aléatoire pour fournir une variété d'options aux utilisateurs.
 .. code-block:: python 
    def get_random_resources(emotion):
       if emotion in resources:
@@ -261,81 +105,43 @@ Sélectionne des ressources adaptées aux émotions détectées :
          return selected_videos, selected_exercises
       return [], []
 
-* Modèle de langage * :
-==================
-Récupère le modèle de langage pour générer des réponses :
+Modèle de langage
+=================
+Le modèle de langage utilisé est le modèle Llama 3.2 d'Ollama, qui permet d'analyser le texte et de générer des réponses pertinentes. Le modèle est chargé via la bibliothèque Langchain et utilise l'API d'Ollama pour fournir des réponses basées sur le contexte de l'utilisateur.
 .. code-block:: python 
    def get_model():
     return OllamaLLM(model="llama3.2")
-   
-* CHAT * :
+
+Réponse Chatbot
+===============
+Le chatbot génère une réponse complète qui inclut une analyse de l'émotion de l'utilisateur ainsi que des recommandations pratiques. La réponse est ensuite envoyée à l'utilisateur via l'interface Streamlit.
+
+Historique Chatbot
 ==================
-la fonction chat permet d'implémenter un chatbot de bien-être émotionnel à l'aide de Streamlit. Son objectif est de fournir une interface utilisateur interactive où les utilisateurs peuvent poser des questions, exprimer leurs émotions, et recevoir des réponses adaptées, accompagnées de recommandations pour améliorer leur bien-être.
-elle comporte les fonctions suivantes:
-
-   1-  Initialisation de la session
-   ==================================
-      Configure l’état de la session utilisateur :
-      .. code-block:: python
-         def initialize_session():
-            if "messages" not in st.session_state:
-               st.session_state.messages = []
-            if "user_input" not in st.session_state:
-               st.session_state.user_input = ""
-            
-
-   2-  Historique du Chatbot:
-   ================================== 
-      la Variable "history" permet de stocker les messages entre l'utilisateur et le chat.
-      .. code-block:: python
+Toutes les interactions entre l'utilisateur et le chatbot sont enregistrées dans l'historique de la session. Cela permet à l'utilisateur de revoir ses conversations précédentes et d'observer les tendances de son bien-être au fil du temps.
+.. code-block:: python
          if 'history' not in st.session_state:
             st.session_state.history = []  
-            
-   2- Reponse Chatbot:
-   ================================== 
-      le code suivant permet de generer de la reponse du chatbot(conseils+recommandations)
-   .. code-block:: python
-      # Détection et recommandations basées sur plusieurs émotions
-        detected_emotions = detect_and_recommend_emotions(user_input)  # Retourne une liste d'émotions
-        if detected_emotions:
-            for emotion in detected_emotions:
-                if emotion in resources:  # Vérifie si l'émotion a des ressources associées
-                    resource = resources[emotion]
-                
-                    # Sélection de 2-3 vidéos et exercices aléatoires pour chaque catégorie
-                    recommendations = f"\n\n### Recommandations pour l'émotion : {emotion.capitalize()}\n"
-                    
-                    for category, items in resource.get("videos", {}).items():
-                        selected_videos = random.sample(items, min(2, len(items)))
-                        recommendations += f"- **{category.capitalize()}**: " + ", ".join(
-                            f"[Vidéo {i+1}]({url})" for i, url in enumerate(selected_videos)
-                        ) + "\n"
-                    
-                    selected_exercises = random.sample(
-                        resource.get("exercise", []), 
-                        min(2, len(resource.get("exercise", [])))
-                    )
-                    recommendations += "- **Exercices**: " + ", ".join(selected_exercises) + "\n"
 
-                    response += recommendations
-
-   Affichage
-   ===============
-   1- Afficher la réponse du chatbot après la saisie de l'utilisateur:
+Affichage
+=========
+Les réponses du chatbot sont affichées à l'utilisateur dans un format lisible via Streamlit. Les vidéos et exercices recommandés sont fournis avec des liens cliquables. L'historique des messages est également affiché pour permettre une vue d'ensemble des échanges.
+- Afficher la réponse du chatbot après la saisie de l'utilisateur:
     .. code-block:: python
       if user_input:
          st.write(f"### Chatbot :")
          st.write(response)
 
-   2- Afficher l'historique
+- Afficher l'historique
    .. code-block:: python
       st.write("### Historique de la conversation :")
       for message in st.session_state.history:
          st.write(message) 
 
-   Interface STREAMLIT 
-   ===============
-   .. code-block:: python
+Interface STREAMLIT
+===================
+L'interface utilisateur est développée à l'aide de Streamlit. Elle permet une interaction facile et fluide avec le chatbot. L'utilisateur peut entrer ses messages, consulter les réponses du chatbot, et explorer les recommandations sous forme de vidéos et d'exercices.
+.. code-block:: python
     st.title("Chatbot PSY 🌼")
     # Introduction
     st.write("Bonjour ! Je suis Psy, votre chatbot bien-être. Comment puis-je vous aider aujourd'hui ?")
@@ -354,7 +160,8 @@ elle comporte les fonctions suivantes:
             """
         )
 
-         
 Conclusion
-==================
-Le Chatbot PSY est une application utile pour explorer les émotions et accéder à des ressources pratiques. N’hésitez pas à contribuer au projet ou à signaler des problèmes via le dépôt GitHub.
+==========
+Ce chatbot fournit un soutien émotionnel accessible et personnalisé pour les utilisateurs en fonction de leurs émotions. Il combine des techniques d'analyse de texte, des recommandations basées sur des ressources variées, et une interface interactive pour améliorer le bien-être mental des étudiants et de toute autre personne cherchant du soutien.
+
+
