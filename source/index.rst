@@ -65,6 +65,7 @@ Installation
    import random
 - Lancez l'application Streamlit :
 .. code-block:: python
+   streamlit run chatbot_psy.py
 
 Collecte de données
 ===================
