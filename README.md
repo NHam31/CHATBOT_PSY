@@ -22,22 +22,20 @@ Le Chatbot PSY est une application Streamlit interactive conçue pour aider les 
 
 Pour installer et exécuter le chatbot localement, suivez ces étapes :
 
-### 1. Cloner le dépôt
+# 1. Cloner le dépôt
 
 git clone https://github.com/votre-utilisateur/chatbot-psy.git
 cd chatbot-psy
 
-### 2.Créer un environnement virtuel (optionel)
+# 2.Créer un environnement virtuel (optionel)
 python -m venv venv
 source venv/bin/activate   # Sur Windows, utilisez `venv\Scripts\activate`
 
-### 3. Installer les dépendances
+# 3. Installer les dépendances
 pip install -r requirements.txt
 
-### 4. Exécuter l'application Streamlit
-streamlit run src/chatbot_psy.py
 
-#Structure du projet
+### Structure du projet
 chatbot_psy/
 │
 ├── config.py                    # Configuration du projet
@@ -70,3 +68,61 @@ with open("resources/resources.json", "r") as file:
     resources = json.load(file)
 
 print(resources["stress"]["exercise"])
+
+### Structure du Code
+
+Le projet est structuré de manière à faciliter la navigation et la compréhension du code.
+
+- **initialize_session** : Cette fonction configure l'état de la session utilisateur.
+  def initialize_session():
+    if "messages" not in st.session_state:
+        st.session_state.messages = []
+    if "user_input" not in st.session_state:
+        st.session_state.user_input = ""
+  
+- **detect_and_recommend_emotions** : Cette fonction analyse les entrées utilisateur pour détecter les émotions et les troubles associés.
+  def detect_and_recommend_emotions(response):
+    keywords = {
+        "stress": ["stressé", "stress"],
+        "depression": ["déprimé", "triste", "sans espoir"],
+        "anxiety": ["anxiété", "angoisse", "peur"],
+        "adaptability": ["changement", "adaptabilité"]
+    }
+    detected_emotions = []
+    for category, terms in keywords.items():
+        for term in terms:
+            if term in response.lower():
+                detected_emotions.append(category)
+    return detected_emotions
+
+
+- **get_random_resources** : Cette fonction sélectionne aléatoirement des vidéos et des exercices en fonction des émotions détectées.
+  def get_random_resources(emotion):
+    if emotion in resources:
+        resource = resources[emotion]
+        selected_videos = []
+        selected_exercises = []
+        if "videos" in resource:
+            for category, items in resource["videos"].items():
+                selected_videos.extend(random.sample(items, min(2, len(items))))
+        if "exercise" in resource:
+            selected_exercises = random.sample(resource["exercise"], min(3, len(resource["exercise"])))
+         return selected_videos, selected_exercises
+    return [], []
+
+- **chat** : Cette fonction gère l'interaction principale avec l'utilisateur via Streamlit. Elle affiche le chatbot et les recommandations en fonction des émotions détectées.
+- **get_model** : Cette fonction récupère le modèle de langage pour générer des réponses en fonction des entrées utilisateur.
+  def get_model():
+    return OllamaLLM(model="llama3.2")
+
+- **resources** : Dictionnaire contenant les ressources disponibles pour chaque émotion et trouble, comme des vidéos et des exercices.
+
+def initialize_session():
+    if "messages" not in st.session_state:
+        st.session_state.messages = []
+    if "user_input" not in st.session_state:
+        st.session_state.user_input = ""
+
+###Exécuter l'application Streamlit
+streamlit run src/chatbot_psy.py
+
