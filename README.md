@@ -38,7 +38,6 @@ pip install -r requirements.txt
 ### Structure du projet
 chatbot_psy/
 │
-├── config.py                    # Configuration du projet
 ├── requirements.txt             # Liste des dépendances
 ├── setup.py                     # Script d'installation
 ├── src/
