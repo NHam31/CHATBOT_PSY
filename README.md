@@ -22,16 +22,16 @@ Le Chatbot PSY est une application Streamlit interactive conçue pour aider les 
 
 Pour installer et exécuter le chatbot localement, suivez ces étapes :
 
-# 1. Cloner le dépôt
+#### 1. Cloner le dépôt
 
 git clone https://github.com/votre-utilisateur/chatbot-psy.git
 cd chatbot-psy
 
-# 2.Créer un environnement virtuel (optionel)
+#### 2.Créer un environnement virtuel (optionel)
 python -m venv venv
 source venv/bin/activate   # Sur Windows, utilisez `venv\Scripts\activate`
 
-# 3. Installer les dépendances
+#### 3. Installer les dépendances
 pip install -r requirements.txt
 
 
