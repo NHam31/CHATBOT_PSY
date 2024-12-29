@@ -10,7 +10,6 @@ Bienvenue dans la documentation officielle du projet Chatbot PSY. Cette applicat
 à mieux comprendre leurs émotions et à améliorer leur bien-être mental.
 
 * Table des matières *
-
   - introduction
   - Fonctionnalités
   - Prérequis
